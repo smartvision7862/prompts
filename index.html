@@ -61,17 +61,21 @@
             align-items: center;
             padding: 0 4rem;
             z-index: 100;
-            mix-blend-mode: difference;
-            pointer-events: none; /* Let clicks pass through if not on brand */
+            pointer-events: none;
         }
 
         .brand-logo {
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 20px;
-            font-weight: 600;
-            color: #ffffff;
-            letter-spacing: -0.5px;
             pointer-events: auto;
+            display: flex;
+            align-items: center;
+        }
+
+        .brand-logo img {
+            height: 48px;
+            width: auto;
+            object-fit: contain;
+            filter: brightness(0) invert(1); /* Make it white on black hero */
+            transition: filter 0.3s ease;
         }
 
         /* Hero Section */
@@ -87,7 +91,16 @@
 
         .hero-content {
             max-width: 900px;
-            margin-left: max(0px, calc((100vw - 1350px) / 2)); /* Container alignment */
+            margin-left: max(0px, calc((100vw - 1350px) / 2));
+        }
+
+        .hero-logo {
+            height: 80px;
+            width: auto;
+            object-fit: contain;
+            margin-bottom: 2rem;
+            display: block;
+            filter: brightness(0) invert(1);
         }
 
         .hero-label {
@@ -376,11 +389,14 @@
     <div class="cursor-outline"></div>
 
     <nav>
-        <div class="brand-logo">Two.AI</div>
+        <div class="brand-logo">
+            <img src="logo-dark.png" alt="SmartVision AI Prompts">
+        </div>
     </nav>
     
     <header class="hero-section">
         <div class="hero-content">
+            <img src="logo-dark.png" alt="SmartVision AI Prompts" class="hero-logo">
             <span class="hero-label">Ultimate AI Resource</span>
             <h1 id="main-title">21 Powerful ChatGPT Prompts</h1>
             <p id="sub-title">Build a Powerful Personal Brand & Grow on Social Media</p>
@@ -412,8 +428,9 @@
     </div>
 
     <footer class="site-footer">
+        <img src="logo-dark.png" alt="SmartVision AI Prompts" style="height:60px; filter: brightness(0) invert(1); margin-bottom: 1rem;">
         <h2 class="footer-heading">Transform Your Workflow</h2>
-        <div class="footer-copy">© 2026 AI Talkbot. All rights reserved.</div>
+        <div class="footer-copy">© 2026 SmartVision AI Prompts. All rights reserved.</div>
     </footer>
 
     <script>
