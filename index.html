@@ -68,14 +68,26 @@
             pointer-events: auto;
             display: flex;
             align-items: center;
+            gap: 10px;
+            text-decoration: none;
         }
 
-        .brand-logo img {
-            height: 48px;
-            width: auto;
-            object-fit: contain;
-            filter: brightness(0) invert(1); /* Make it white on black hero */
-            transition: filter 0.3s ease;
+        .brand-logo .logo-icon {
+            width: 36px;
+            height: 36px;
+        }
+
+        .brand-logo .logo-wordmark {
+            font-family: 'Inter', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: -0.5px;
+            line-height: 1;
+        }
+
+        .brand-logo .logo-wordmark span {
+            color: #60a5fa;
         }
 
         /* Hero Section */
@@ -389,14 +401,44 @@
     <div class="cursor-outline"></div>
 
     <nav>
-        <div class="brand-logo">
-            <img src="logo-dark.png" alt="SmartVision AI Prompts">
-        </div>
+        <a class="brand-logo" href="#">
+            <!-- Eye / Neural lens SVG icon -->
+            <svg class="logo-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="18" cy="18" rx="16" ry="10" stroke="white" stroke-width="2"/>
+                <circle cx="18" cy="18" r="5" fill="#60a5fa"/>
+                <circle cx="18" cy="18" r="2" fill="white"/>
+                <circle cx="10" cy="14" r="1.2" fill="#60a5fa" opacity="0.6"/>
+                <circle cx="26" cy="14" r="1.2" fill="#60a5fa" opacity="0.6"/>
+                <circle cx="10" cy="22" r="1.2" fill="#60a5fa" opacity="0.6"/>
+                <circle cx="26" cy="22" r="1.2" fill="#60a5fa" opacity="0.6"/>
+                <line x1="13" y1="15.5" x2="10" y2="14" stroke="#60a5fa" stroke-width="1" opacity="0.5"/>
+                <line x1="23" y1="15.5" x2="26" y2="14" stroke="#60a5fa" stroke-width="1" opacity="0.5"/>
+                <line x1="13" y1="20.5" x2="10" y2="22" stroke="#60a5fa" stroke-width="1" opacity="0.5"/>
+                <line x1="23" y1="20.5" x2="26" y2="22" stroke="#60a5fa" stroke-width="1" opacity="0.5"/>
+            </svg>
+            <div class="logo-wordmark">Smart<span>Vision</span></div>
+        </a>
     </nav>
     
     <header class="hero-section">
         <div class="hero-content">
-            <img src="logo-dark.png" alt="SmartVision AI Prompts" class="hero-logo">
+            <!-- Hero inline logo -->
+            <div style="display:flex; align-items:center; gap:12px; margin-bottom:2rem;">
+                <svg width="52" height="52" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="18" cy="18" rx="16" ry="10" stroke="white" stroke-width="2"/>
+                    <circle cx="18" cy="18" r="5" fill="#60a5fa"/>
+                    <circle cx="18" cy="18" r="2" fill="white"/>
+                    <circle cx="10" cy="14" r="1.2" fill="#60a5fa" opacity="0.7"/>
+                    <circle cx="26" cy="14" r="1.2" fill="#60a5fa" opacity="0.7"/>
+                    <circle cx="10" cy="22" r="1.2" fill="#60a5fa" opacity="0.7"/>
+                    <circle cx="26" cy="22" r="1.2" fill="#60a5fa" opacity="0.7"/>
+                    <line x1="13" y1="15.5" x2="10" y2="14" stroke="#60a5fa" stroke-width="1" opacity="0.5"/>
+                    <line x1="23" y1="15.5" x2="26" y2="14" stroke="#60a5fa" stroke-width="1" opacity="0.5"/>
+                    <line x1="13" y1="20.5" x2="10" y2="22" stroke="#60a5fa" stroke-width="1" opacity="0.5"/>
+                    <line x1="23" y1="20.5" x2="26" y2="22" stroke="#60a5fa" stroke-width="1" opacity="0.5"/>
+                </svg>
+                <div style="font-family:'Inter',sans-serif; font-size:32px; font-weight:800; color:#fff; letter-spacing:-1px; line-height:1;">Smart<span style="color:#60a5fa;">Vision</span></div>
+            </div>
             <span class="hero-label">Ultimate AI Resource</span>
             <h1 id="main-title">21 Powerful ChatGPT Prompts</h1>
             <p id="sub-title">Build a Powerful Personal Brand & Grow on Social Media</p>
@@ -428,9 +470,25 @@
     </div>
 
     <footer class="site-footer">
-        <img src="logo-dark.png" alt="SmartVision AI Prompts" style="height:60px; filter: brightness(0) invert(1); margin-bottom: 1rem;">
+        <!-- Footer inline logo -->
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:1.5rem;">
+            <svg width="44" height="44" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="18" cy="18" rx="16" ry="10" stroke="white" stroke-width="2"/>
+                <circle cx="18" cy="18" r="5" fill="#93c5fd"/>
+                <circle cx="18" cy="18" r="2" fill="white"/>
+                <circle cx="10" cy="14" r="1.2" fill="#93c5fd" opacity="0.7"/>
+                <circle cx="26" cy="14" r="1.2" fill="#93c5fd" opacity="0.7"/>
+                <circle cx="10" cy="22" r="1.2" fill="#93c5fd" opacity="0.7"/>
+                <circle cx="26" cy="22" r="1.2" fill="#93c5fd" opacity="0.7"/>
+                <line x1="13" y1="15.5" x2="10" y2="14" stroke="#93c5fd" stroke-width="1" opacity="0.5"/>
+                <line x1="23" y1="15.5" x2="26" y2="14" stroke="#93c5fd" stroke-width="1" opacity="0.5"/>
+                <line x1="13" y1="20.5" x2="10" y2="22" stroke="#93c5fd" stroke-width="1" opacity="0.5"/>
+                <line x1="23" y1="20.5" x2="26" y2="22" stroke="#93c5fd" stroke-width="1" opacity="0.5"/>
+            </svg>
+            <div style="font-family:'Inter',sans-serif; font-size:24px; font-weight:800; color:#fff; letter-spacing:-0.5px;">Smart<span style="color:#93c5fd;">Vision</span></div>
+        </div>
         <h2 class="footer-heading">Transform Your Workflow</h2>
-        <div class="footer-copy">© 2026 SmartVision AI Prompts. All rights reserved.</div>
+        <div class="footer-copy">&copy; 2026 SmartVision AI Prompts. All rights reserved.</div>
     </footer>
 
     <script>
