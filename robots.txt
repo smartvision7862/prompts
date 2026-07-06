@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Block unnecessary files from indexing
+Disallow: /node_modules/
+Disallow: /scripts/
+Disallow: /sw.js
+Disallow: /.github/
+
+Sitemap: https://smartvision7862.github.io/prompts/sitemap.xml

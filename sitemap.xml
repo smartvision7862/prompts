@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Homepage / Main Prompts Hub -->
+  <url>
+    <loc>https://smartvision7862.github.io/prompts/</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Branding Prompts Section -->
+  <url>
+    <loc>https://smartvision7862.github.io/prompts/#branding</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Content Creation Prompts -->
+  <url>
+    <loc>https://smartvision7862.github.io/prompts/#content</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Productivity Prompts -->
+  <url>
+    <loc>https://smartvision7862.github.io/prompts/#productivity</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Job Interview Prompts -->
+  <url>
+    <loc>https://smartvision7862.github.io/prompts/#interview</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- AI Roadmap -->
+  <url>
+    <loc>https://smartvision7862.github.io/prompts/#roadmap</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Google AI Ecosystem -->
+  <url>
+    <loc>https://smartvision7862.github.io/prompts/#google</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ChatGPT Shortcuts -->
+  <url>
+    <loc>https://smartvision7862.github.io/prompts/#shortcuts</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 12 AI Skills -->
+  <url>
+    <loc>https://smartvision7862.github.io/prompts/#ai_skills</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Claude Commands -->
+  <url>
+    <loc>https://smartvision7862.github.io/prompts/#claude</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Learning Prompts -->
+  <url>
+    <loc>https://smartvision7862.github.io/prompts/#learning</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Automation Prompts -->
+  <url>
+    <loc>https://smartvision7862.github.io/prompts/#automation</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Career Growth Prompts -->
+  <url>
+    <loc>https://smartvision7862.github.io/prompts/#career</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Video & Image AI Prompts (Midjourney) -->
+  <url>
+    <loc>https://smartvision7862.github.io/prompts/#video_ai</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>
