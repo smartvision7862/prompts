@@ -3,23 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ultimate Collection: Prompts, Roadmaps, AI Ecosystems, Shortcuts, and AI Skills">
-    <meta name="theme-color" content="#3b82f6">
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Ultimate Collection: Prompts, Roadmaps, AI Ecosystems, Shortcuts, and AI Skills for ChatGPT, Midjourney, Claude, and more.">
+    <meta name="keywords" content="AI Prompts, ChatGPT Prompts, Midjourney Prompts, AI Ecosystem, Prompt Engineering, AI Tools, AI Roadmap, Claude Commands, Video AI">
+    <meta name="author" content="SmartVision">
+    <meta name="robots" content="index, follow">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://smartvision7862.github.io/prompts/">
+    <meta property="og:title" content="Ultimate Prompts & AI Hub">
+    <meta property="og:description" content="Ultimate Collection: Prompts, Roadmaps, AI Ecosystems, Shortcuts, and AI Skills for ChatGPT, Midjourney, Claude, and more.">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://smartvision7862.github.io/prompts/">
+    <meta property="twitter:title" content="Ultimate Prompts & AI Hub">
+    <meta property="twitter:description" content="Ultimate Collection: Prompts, Roadmaps, AI Ecosystems, Shortcuts, and AI Skills for ChatGPT, Midjourney, Claude, and more.">
+    <!-- Theme & Manifest -->
+    <meta name="theme-color" content="#0f172a">
+    <link rel="canonical" href="https://smartvision7862.github.io/prompts/">
     <link rel="manifest" href="manifest.json">
     <title>Ultimate Prompts & AI Hub</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --bg-color: #0f172a;
-            --card-bg: rgba(30, 41, 59, 0.7);
+            --bg-color: #050505;
+            --card-bg: rgba(15, 23, 42, 0.4);
             --text-primary: #f8fafc;
             --text-secondary: #cbd5e1;
             --accent: #3b82f6;
             --accent-hover: #2563eb;
             --gradient-1: #c026d3;
             --gradient-2: #3b82f6;
-            --glass-border: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.05);
         }
 
         * {
@@ -37,55 +53,33 @@
             position: relative;
         }
 
-        /* Background animated blobs */
-        .background-elements {
+        /* Mouse tracking spotlight effect (Awwwards dark style) */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            background: radial-gradient(
+                circle 800px at var(--mouse-x, 50vw) var(--mouse-y, 50vh),
+                rgba(59, 130, 246, 0.12),
+                transparent 80%
+            );
+            z-index: -2;
+            pointer-events: none;
+            transition: background 0.1s ease;
+        }
+
+        /* Subtle Noise Overlay for UI Max Look */
+        .noise-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100vw;
             height: 100vh;
+            pointer-events: none;
             z-index: -1;
-            overflow: hidden;
-            filter: blur(100px);
-        }
-
-        .blob {
-            position: absolute;
-            border-radius: 50%;
-            animation: float 20s infinite alternate;
-            opacity: 0.5;
-        }
-
-        .blob-1 {
-            width: 400px;
-            height: 400px;
-            background: var(--gradient-1);
-            top: -100px;
-            left: -100px;
-            animation-delay: 0s;
-        }
-
-        .blob-2 {
-            width: 500px;
-            height: 500px;
-            background: var(--gradient-2);
-            bottom: -200px;
-            right: -100px;
-            animation-delay: -5s;
-        }
-
-        .blob-3 {
-            width: 300px;
-            height: 300px;
-            background: #0ea5e9;
-            top: 40%;
-            left: 40%;
-            animation-delay: -10s;
-        }
-
-        @keyframes float {
-            0% { transform: translate(0, 0) scale(1); }
-            100% { transform: translate(100px, 50px) scale(1.2); }
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
         }
 
         /* Header */
@@ -187,22 +181,34 @@
             display: flex;
             flex-direction: column;
             gap: 1rem;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: transform 0.15s ease-out, opacity 0.6s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.3s ease, border-color 0.3s ease, background 0.3s ease;
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
             opacity: 0;
-            transform: translateY(30px);
+            transform: perspective(1000px) translateY(40px) rotateX(0) rotateY(0);
+            transform-style: preserve-3d;
+            will-change: transform, opacity;
+        }
+
+        .prompt-card > * {
+            transform: translateZ(20px);
+            transition: transform 0.3s ease-out;
         }
 
         .prompt-card.visible {
             opacity: 1;
-            transform: translateY(0);
+            transform: perspective(1000px) translateY(0) rotateX(0) rotateY(0);
         }
 
         .prompt-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
-            border-color: rgba(255, 255, 255, 0.2);
-            background: rgba(40, 50, 70, 0.8);
+            /* Transform is handled dynamically via JS for 3D tilt */
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border-color: rgba(255, 255, 255, 0.3);
+            background: rgba(40, 50, 70, 0.85);
+            z-index: 10;
+        }
+        
+        .prompt-card:hover > * {
+            transform: translateZ(40px);
         }
 
         .card-header {
@@ -336,14 +342,48 @@
             .glass-header { padding: 1.5rem; }
             .prompts-grid { grid-template-columns: 1fr; }
         }
+
+        /* Awwwards Custom Cursor */
+        @media (pointer: fine) {
+            body, a, button, .tab-btn, .copy-btn { cursor: none; }
+        }
+
+        .cursor-dot, .cursor-outline {
+            position: fixed;
+            top: 0; left: 0;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            z-index: 9999;
+            pointer-events: none;
+            mix-blend-mode: difference;
+        }
+
+        .cursor-dot {
+            width: 8px; height: 8px;
+            background-color: white;
+            transition: transform 0.05s linear;
+        }
+
+        .cursor-outline {
+            width: 40px; height: 40px;
+            border: 1px solid rgba(255,255,255,0.5);
+            transition: transform 0.15s ease-out, width 0.2s, height 0.2s, background-color 0.2s, border-color 0.2s;
+        }
+
+        .cursor-outline.hover {
+            width: 70px; height: 70px;
+            background-color: rgba(255,255,255,0.2);
+            border-color: transparent;
+        }
     </style>
 </head>
 <body>
-    <div class="background-elements">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
-        <div class="blob blob-3"></div>
-    </div>
+    <!-- Awwwards Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <div class="noise-overlay"></div>
+    <!-- Awwwards spotlight background active via CSS body::before -->
     
     <header>
         <div class="glass-header">
@@ -971,6 +1011,59 @@
                     .catch(error => {
                         console.log('ServiceWorker registration failed: ', error);
                     });
+            });
+        }
+
+        // Awwwards Interaction Logic (Cursor, 3D Tilt, Magnetic)
+        if (window.matchMedia("(pointer: fine)").matches) {
+            const cursorDot = document.querySelector('.cursor-dot');
+            const cursorOutline = document.querySelector('.cursor-outline');
+            
+            // Cursor tracking & Spotlight
+            window.addEventListener('mousemove', (e) => {
+                const posX = e.clientX;
+                const posY = e.clientY;
+                
+                cursorDot.style.transform = `translate(${posX}px, ${posY}px) translate(-50%, -50%)`;
+                cursorOutline.style.transform = `translate(${posX}px, ${posY}px) translate(-50%, -50%)`;
+                
+                // Spotlight background tracking
+                document.body.style.setProperty('--mouse-x', `${posX}px`);
+                document.body.style.setProperty('--mouse-y', `${posY}px`);
+
+                // Handle 3D Tilt on prompt cards
+                const target = e.target.closest('.prompt-card');
+                if (target) {
+                    const rect = target.getBoundingClientRect();
+                    const x = e.clientX - rect.left; // x position within the element
+                    const y = e.clientY - rect.top;  // y position within the element
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    
+                    const rotateX = ((y - centerY) / centerY) * -8; // Max 8 deg tilt
+                    const rotateY = ((x - centerX) / centerX) * 8;
+                    
+                    target.style.transform = `perspective(1000px) translateY(-10px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+                }
+            });
+
+            // Hover state logic
+            document.addEventListener('mouseover', (e) => {
+                if (e.target.closest('button, a, .tab-btn, .prompt-card')) {
+                    cursorOutline.classList.add('hover');
+                }
+            });
+
+            document.addEventListener('mouseout', (e) => {
+                if (e.target.closest('button, a, .tab-btn, .prompt-card')) {
+                    cursorOutline.classList.remove('hover');
+                }
+                
+                // Reset tilt smoothly
+                const target = e.target.closest('.prompt-card');
+                if (target) {
+                    target.style.transform = `perspective(1000px) translateY(0) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+                }
             });
         }
     </script>
