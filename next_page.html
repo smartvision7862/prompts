@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="21 Powerful ChatGPT Prompts to Build a Powerful Personal Brand & Grow on Social Media">
+    <title>Brand Growth Prompts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --accent: #3b82f6;
+            --accent-hover: #2563eb;
+            --gradient-1: #c026d3;
+            --gradient-2: #3b82f6;
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Background animated blobs */
+        .background-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            overflow: hidden;
+            filter: blur(100px);
+        }
+
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            animation: float 20s infinite alternate;
+            opacity: 0.5;
+        }
+
+        .blob-1 {
+            width: 400px;
+            height: 400px;
+            background: var(--gradient-1);
+            top: -100px;
+            left: -100px;
+            animation-delay: 0s;
+        }
+
+        .blob-2 {
+            width: 500px;
+            height: 500px;
+            background: var(--gradient-2);
+            bottom: -200px;
+            right: -100px;
+            animation-delay: -5s;
+        }
+
+        .blob-3 {
+            width: 300px;
+            height: 300px;
+            background: #0ea5e9;
+            top: 40%;
+            left: 40%;
+            animation-delay: -10s;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(100px, 50px) scale(1.2); }
+        }
+
+        /* Header */
+        header {
+            padding: 4rem 2rem 2rem;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+        }
+
+        .glass-header {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            padding: 2rem 4rem;
+            border-radius: 24px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            max-width: 800px;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeUp 0.8s ease forwards;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #fff, #93c5fd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .prompts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* Card */
+        .prompt-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .prompt-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .prompt-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 255, 255, 0.2);
+            background: rgba(40, 50, 70, 0.8);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .prompt-number {
+            background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2));
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: white;
+            box-shadow: 0 4px 10px rgba(192, 38, 211, 0.3);
+        }
+
+        .prompt-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #e2e8f0;
+        }
+
+        .prompt-text {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 1rem;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: var(--text-secondary);
+            flex-grow: 1;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .copy-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            padding: 0.75rem;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .copy-btn:hover {
+            background: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+        }
+
+        .copy-btn:active {
+            transform: translateY(0);
+        }
+
+        .copy-btn i {
+            font-size: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem;
+            margin-top: 2rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        footer p {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 30px;
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(10px);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(226, 54, 54, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(226, 54, 54, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(226, 54, 54, 0); }
+        }
+
+        /* Toast notification */
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #10b981;
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            z-index: 1000;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header { padding: 2rem 1rem 1rem; }
+            h1 { font-size: 1.8rem; }
+            .glass-header { padding: 1.5rem; }
+            .prompts-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-elements">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+    
+    <header>
+        <div class="glass-header">
+            <h1><i class="fa-solid fa-rocket"></i> 21 Powerful ChatGPT Prompts</h1>
+            <p>Build a Powerful Personal Brand & Grow on Social Media</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="prompts-grid" id="prompts-container">
+            <!-- Cards will be injected here via JavaScript -->
+        </div>
+    </main>
+
+    <footer>
+        <p><i class="fa-solid fa-heart" style="color: #ef4444;"></i> Double Tap For More</p>
+    </footer>
+
+    <script>
+        const promptsData = [
+            { title: "Discover My Personal Brand", icon: "🎯", text: "I want to build a personal brand around [industry/topic]. Ask me questions about my skills, experience, values, personality, goals, and target audience. Then define my unique positioning, content pillars, brand voice, and long-term branding strategy." },
+            { title: "Create a 90-Day Content Plan", icon: "📊", text: "Build a detailed 90-day content calendar for LinkedIn, X, Instagram, or YouTube. Include posting frequency, content pillars, post formats, hooks, CTAs, engagement ideas, and weekly goals." },
+            { title: "Generate Viral Content Ideas", icon: "✍️", text: "Based on my niche [mention niche], generate 100 high-value content ideas that educate, entertain, or inspire my audience. Categorize them into beginner, intermediate, trending, and evergreen topics." },
+            { title: "Analyze My Audience", icon: "🧠", text: "Help me understand my target audience in detail. Create audience personas including demographics, goals, pain points, fears, questions, buying behavior, preferred platforms, and the type of content they love." },
+            { title: "Optimize My Social Profiles", icon: "📱", text: "Review my LinkedIn, Instagram, X, or YouTube profile. Suggest improvements for my headline, bio, profile photo, banner, featured section, About section, and overall profile to attract followers and opportunities." },
+            { title: "Grow My Audience Organically", icon: "📈", text: "Create a step-by-step strategy to grow my audience organically without paid ads. Include networking, collaborations, SEO, hashtags, engagement techniques, and community-building tactics." },
+            { title: "Improve My Writing Style", icon: "💬", text: "Analyze my writing samples and help me improve clarity, storytelling, readability, emotional impact, and engagement. Create daily writing exercises tailored to my weaknesses." },
+            { title: "Create Video Content Easily", icon: "🎥", text: "I want to start creating videos but don't know where to begin. Create a beginner-friendly strategy covering video ideas, scripting, recording, editing, publishing, and consistency." },
+            { title: "Never Run Out of Content", icon: "🗓", text: "Create a repeatable content ideation system that helps me generate fresh post ideas every week based on industry trends, audience questions, personal experiences, and news." },
+            { title: "Turn My Knowledge Into Content", icon: "💡", text: "I have expertise in [topic]. Show me how to convert my daily work, learning, projects, and experiences into engaging social media posts, articles, newsletters, and videos." },
+            { title: "Build an Engaged Community", icon: "🤝", text: "Teach me how to build a loyal community instead of just increasing follower count. Include engagement strategies, conversation starters, community events, and trust-building techniques." },
+            { title: "Analyze My Content Performance", icon: "📊", text: "I'll share my recent posts and analytics. Analyze what's working, what's not, and suggest improvements to increase reach, engagement, shares, saves, and follower growth." },
+            { title: "Monetize My Personal Brand", icon: "💰", text: "Suggest multiple ways to monetize my personal brand through consulting, courses, digital products, memberships, sponsorships, affiliate marketing, speaking engagements, and coaching." },
+            { title: "Build Authority in My Industry", icon: "🌍", text: "Create a strategy that positions me as a trusted expert in [industry]. Include content types, networking strategies, collaborations, speaking opportunities, and credibility-building activities." },
+            { title: "Create Educational Content", icon: "📚", text: "Help me simplify complex topics in my niche into beginner-friendly posts, carousels, videos, and infographics that are easy to understand and highly shareable." },
+            { title: "Use AI for Content Creation", icon: "🤖", text: "Design an AI-powered content workflow using ChatGPT and other AI tools for research, idea generation, writing, editing, repurposing, scheduling, and analytics." },
+            { title: "Build a Newsletter", icon: "📈", text: "Help me launch and grow an email newsletter. Create a content strategy, lead magnet ideas, welcome sequence, publishing schedule, and subscriber growth plan." },
+            { title: "Content Repurposing System", icon: "🎯", text: "Show me how to turn one long-form article or video into multiple LinkedIn posts, tweets, reels, newsletters, blog posts, and short videos with minimal extra effort." },
+            { title: "Personal Brand Dashboard", icon: "📋", text: "Design a dashboard to track follower growth, engagement rate, profile visits, leads generated, newsletter subscribers, content consistency, and revenue from my personal brand." },
+            { title: "One-Year Brand Growth Plan", icon: "🚀", text: "Build a month-by-month roadmap to grow my personal brand over the next year. Include follower milestones, content goals, networking targets, collaborations, monetization plans, and performance metrics." },
+            { title: "Become My Branding Coach", icon: "🔥", text: "Act as a personal branding expert with 20+ years of experience. Continuously review my content, challenge my ideas, improve my messaging, identify growth opportunities, and help me build a respected and profitable personal brand." }
+        ];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('prompts-container');
+            
+            // Generate cards
+            promptsData.forEach((prompt, index) => {
+                const card = document.createElement('div');
+                card.className = 'prompt-card';
+                card.style.animationDelay = `${index * 0.05}s`;
+                
+                card.innerHTML = `
+                    <div class="card-header">
+                        <div class="prompt-number">${prompt.icon}</div>
+                        <h3 class="prompt-title">${index + 1}. ${prompt.title}</h3>
+                    </div>
+                    <div class="prompt-text">${prompt.text}</div>
+                    <button class="copy-btn" onclick="copyPrompt(this, \`${prompt.text.replace(/`/g, '\\`')}\`)">
+                        <i class="fa-regular fa-copy"></i> Copy Prompt
+                    </button>
+                `;
+                
+                container.appendChild(card);
+            });
+
+            // Intersection Observer for animation on scroll
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.prompt-card').forEach(card => {
+                observer.observe(card);
+            });
+
+            // Setup toast
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.innerHTML = '<i class="fa-solid fa-check-circle"></i> Prompt copied to clipboard!';
+            document.body.appendChild(toast);
+        });
+
+        window.copyPrompt = function(btn, text) {
+            navigator.clipboard.writeText(text).then(() => {
+                // Change button icon and text temporarily
+                const originalHtml = btn.innerHTML;
+                btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+                btn.style.background = '#10b981';
+                btn.style.color = 'white';
+                
+                // Show toast
+                const toast = document.querySelector('.toast');
+                toast.classList.add('show');
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalHtml;
+                    btn.style.background = '';
+                    btn.style.color = '';
+                    toast.classList.remove('show');
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+            });
+        };
+    </script>
+</body>
+</html>

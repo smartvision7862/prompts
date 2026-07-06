@@ -1,0 +1,16 @@
+{
+  "name": "Personal Brand Builder",
+  "short_name": "BrandBuilder",
+  "description": "21 Powerful ChatGPT Prompts to Build a Powerful Personal Brand & Grow on Social Media",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#3b82f6",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/1010/1010378.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
