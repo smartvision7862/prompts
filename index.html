@@ -19,314 +19,307 @@
     <meta property="twitter:title" content="Ultimate Prompts & AI Hub">
     <meta property="twitter:description" content="Ultimate Collection: Prompts, Roadmaps, AI Ecosystems, Shortcuts, and AI Skills for ChatGPT, Midjourney, Claude, and more.">
     <!-- Theme & Manifest -->
-    <meta name="theme-color" content="#0f172a">
+    <meta name="theme-color" content="#000000">
     <link rel="canonical" href="https://smartvision7862.github.io/prompts/">
     <link rel="manifest" href="manifest.json">
     <title>Ultimate Prompts & AI Hub</title>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --bg-color: #050505;
-            --card-bg: rgba(15, 23, 42, 0.4);
-            --text-primary: #f8fafc;
-            --text-secondary: #cbd5e1;
-            --accent: #3b82f6;
-            --accent-hover: #2563eb;
-            --gradient-1: #c026d3;
-            --gradient-2: #3b82f6;
-            --glass-border: rgba(255, 255, 255, 0.05);
+            --bg-main: #ffffff;
+            --bg-hero: #000000;
+            --bg-footer: #2E2E86;
+            --text-dark: #000000;
+            --text-light: #ffffff;
+            --text-muted: #3E3E3E;
+            --accent-blue: #2E2E86;
+            --border-light: rgba(0,0,0,0.1);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Outfit', sans-serif;
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-primary);
+            background-color: var(--bg-main);
+            color: var(--text-dark);
             min-height: 100vh;
             overflow-x: hidden;
-            position: relative;
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Mouse tracking spotlight effect (Awwwards dark style) */
-        body::before {
-            content: "";
+        /* Top Navbar (Brand) */
+        nav {
             position: fixed;
-            top: 0; left: 0;
-            width: 100vw; height: 100vh;
-            background: radial-gradient(
-                circle 800px at var(--mouse-x, 50vw) var(--mouse-y, 50vh),
-                rgba(59, 130, 246, 0.12),
-                transparent 80%
-            );
-            z-index: -2;
-            pointer-events: none;
-            transition: background 0.1s ease;
-        }
-
-        /* Subtle Noise Overlay for UI Max Look */
-        .noise-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            pointer-events: none;
-            z-index: -1;
-            opacity: 0.03;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-        }
-
-        /* Header */
-        header {
-            padding: 4rem 2rem 2rem;
-            text-align: center;
+            top: 0; left: 0; right: 0;
+            height: 80px;
             display: flex;
-            justify-content: center;
+            align-items: center;
+            padding: 0 4rem;
+            z-index: 100;
+            mix-blend-mode: difference;
+            pointer-events: none; /* Let clicks pass through if not on brand */
         }
 
-        .glass-header {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            padding: 2rem 4rem;
-            border-radius: 24px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            max-width: 800px;
-            transform: translateY(20px);
-            opacity: 0;
-            animation: fadeUp 0.8s ease forwards;
+        .brand-logo {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 20px;
+            font-weight: 600;
+            color: #ffffff;
+            letter-spacing: -0.5px;
+            pointer-events: auto;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background-color: var(--bg-hero);
+            min-height: 600px;
+            padding: 160px 4rem 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin-left: max(0px, calc((100vw - 1350px) / 2)); /* Container alignment */
+        }
+
+        .hero-label {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 14px;
+            font-weight: 500;
+            color: #F0F0F0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+            display: inline-block;
         }
 
         h1 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 0.5rem;
-            background: linear-gradient(135deg, #fff, #93c5fd);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(32px, 5vw, 64px);
+            font-weight: 500;
+            line-height: 1.1;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
         }
 
-        header p {
-            font-size: 1.2rem;
-            color: var(--text-secondary);
-            transition: all 0.3s ease;
+        .hero-section p {
+            font-size: 18px;
+            color: #F0F0F0;
+            font-weight: 400;
+            max-width: 600px;
+            line-height: 1.5;
         }
 
-        /* Tabs */
+        /* Main Content Container */
+        .main-container {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 4rem;
+        }
+
+        /* Tabs (Workflow) */
         .tabs-container {
             display: flex;
-            justify-content: center;
             gap: 1rem;
-            margin-bottom: 3rem;
             flex-wrap: wrap;
-            padding: 0 2rem;
+            margin-bottom: 4rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-light);
         }
 
         .tab-btn {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--glass-border);
-            color: var(--text-secondary);
+            background: transparent;
+            border: 1px solid var(--border-light);
+            color: var(--text-dark);
             padding: 0.8rem 1.5rem;
-            border-radius: 30px;
-            font-size: 1.05rem;
-            font-weight: 600;
+            border-radius: 4px;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 13px;
+            font-weight: 500;
             cursor: pointer;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
+            text-transform: uppercase;
         }
 
         .tab-btn:hover {
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            transform: translateY(-2px);
+            border-color: var(--text-dark);
+            background: #f5f5f5;
         }
 
         .tab-btn.active {
-            background: var(--accent);
-            color: white;
-            border-color: var(--accent-hover);
-            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+            background: var(--text-dark);
+            color: var(--text-light);
+            border-color: var(--text-dark);
         }
 
-        /* Main Content */
-        main {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem 2rem;
-        }
-
+        /* Grid */
         .prompts-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 2rem;
         }
 
-        /* Card */
+        /* Feature Cards */
         .prompt-card {
-            background: var(--card-bg);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid var(--glass-border);
-            border-radius: 20px;
-            padding: 1.5rem;
+            background: linear-gradient(0deg, rgb(46, 46, 134) 7.6%, rgba(243, 248, 240, 0) 100%);
+            background-color: #f8fafc;
+            border-radius: 8px;
+            padding: 2.5rem;
             display: flex;
             flex-direction: column;
-            gap: 1rem;
-            transition: transform 0.15s ease-out, opacity 0.6s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.3s ease, border-color 0.3s ease, background 0.3s ease;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            gap: 1.5rem;
+            border: 1px solid var(--border-light);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .prompt-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 4px;
+            background: var(--accent-blue);
             opacity: 0;
-            transform: perspective(1000px) translateY(40px) rotateX(0) rotateY(0);
-            transform-style: preserve-3d;
-            will-change: transform, opacity;
-        }
-
-        .prompt-card > * {
-            transform: translateZ(20px);
-            transition: transform 0.3s ease-out;
-        }
-
-        .prompt-card.visible {
-            opacity: 1;
-            transform: perspective(1000px) translateY(0) rotateX(0) rotateY(0);
+            transition: opacity 0.3s ease;
         }
 
         .prompt-card:hover {
-            /* Transform is handled dynamically via JS for 3D tilt */
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-            border-color: rgba(255, 255, 255, 0.3);
-            background: rgba(40, 50, 70, 0.85);
-            z-index: 10;
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(46, 46, 134, 0.12);
         }
-        
-        .prompt-card:hover > * {
-            transform: translateZ(40px);
+
+        .prompt-card:hover::before {
+            opacity: 1;
         }
 
         .card-header {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 1rem;
         }
 
         .prompt-number {
-            background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2));
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            font-size: 1.2rem;
-            color: white;
-            box-shadow: 0 4px 10px rgba(192, 38, 211, 0.3);
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--accent-blue);
             flex-shrink: 0;
         }
 
         .prompt-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #e2e8f0;
+            font-family: 'Inter', sans-serif;
+            font-size: 22px;
+            font-weight: 500;
+            color: var(--text-dark);
+            line-height: 1.3;
+            letter-spacing: -0.5px;
         }
 
         .prompt-text {
-            background: rgba(0, 0, 0, 0.2);
-            padding: 1rem;
-            border-radius: 12px;
-            font-size: 0.95rem;
-            line-height: 1.5;
-            color: var(--text-secondary);
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--text-muted);
             flex-grow: 1;
-            border: 1px solid rgba(255, 255, 255, 0.05);
             white-space: pre-line;
+        }
+        
+        .prompt-category {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 11px;
+            background: var(--accent-blue);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            margin-bottom: 12px;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .copy-btn {
-            background: rgba(255, 255, 255, 0.1);
-            border: none;
-            color: white;
-            padding: 0.75rem;
-            border-radius: 12px;
+            background: #ffffff;
+            border: 1px solid #d1d5db;
+            color: var(--text-dark);
+            padding: 1rem;
+            border-radius: 4px;
             cursor: pointer;
-            font-weight: 600;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 13px;
+            font-weight: 500;
+            text-transform: uppercase;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 0.5rem;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
+            width: 100%;
+            margin-top: auto;
         }
 
         .copy-btn:hover {
-            background: var(--accent);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+            background: var(--text-dark);
+            color: var(--text-light);
+            border-color: var(--text-dark);
         }
 
         .copy-btn:active {
-            transform: translateY(0);
-        }
-
-        .copy-btn i {
-            font-size: 1rem;
+            transform: scale(0.98);
         }
 
         /* Footer */
-        footer {
+        .site-footer {
+            background-color: var(--bg-footer);
+            color: var(--text-light);
+            padding: 6rem 4rem;
             text-align: center;
-            padding: 3rem;
+            margin-top: 4rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .footer-heading {
+            font-size: clamp(32px, 4vw, 50px);
+            font-weight: 500;
+            letter-spacing: -1px;
+        }
+
+        .footer-copy {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 12px;
+            color: #a5a5c5;
+            text-transform: uppercase;
             margin-top: 2rem;
-            font-weight: 600;
-            color: var(--text-secondary);
-        }
-
-        footer p {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 30px;
-            border: 1px solid var(--glass-border);
-            backdrop-filter: blur(10px);
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes fadeUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(226, 54, 54, 0.4); }
-            70% { box-shadow: 0 0 0 10px rgba(226, 54, 54, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(226, 54, 54, 0); }
         }
 
         /* Toast notification */
         .toast {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #10b981;
-            color: white;
+            bottom: 30px;
+            right: 30px;
+            background: var(--text-dark);
+            color: var(--text-light);
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 13px;
             padding: 1rem 1.5rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             display: flex;
             align-items: center;
             gap: 0.5rem;
             transform: translateY(100px);
             opacity: 0;
-            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
             z-index: 1000;
         }
 
@@ -337,13 +330,14 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            header { padding: 2rem 1rem 1rem; }
-            h1 { font-size: 1.8rem; }
-            .glass-header { padding: 1.5rem; }
+            .hero-section { padding: 120px 2rem 60px; min-height: auto; }
+            .main-container { padding: 2rem; }
+            nav { padding: 0 2rem; }
             .prompts-grid { grid-template-columns: 1fr; }
+            .site-footer { padding: 4rem 2rem; }
         }
 
-        /* Awwwards Custom Cursor */
+        /* Custom Cursor (Inverted for light theme) */
         @media (pointer: fine) {
             body, a, button, .tab-btn, .copy-btn { cursor: none; }
         }
@@ -359,63 +353,67 @@
         }
 
         .cursor-dot {
-            width: 8px; height: 8px;
+            width: 6px; height: 6px;
             background-color: white;
             transition: transform 0.05s linear;
         }
 
         .cursor-outline {
-            width: 40px; height: 40px;
-            border: 1px solid rgba(255,255,255,0.5);
+            width: 36px; height: 36px;
+            border: 1px solid rgba(255,255,255,0.7);
             transition: transform 0.15s ease-out, width 0.2s, height 0.2s, background-color 0.2s, border-color 0.2s;
         }
 
         .cursor-outline.hover {
-            width: 70px; height: 70px;
-            background-color: rgba(255,255,255,0.2);
+            width: 60px; height: 60px;
+            background-color: rgba(255,255,255,0.1);
             border-color: transparent;
         }
     </style>
 </head>
 <body>
-    <!-- Awwwards Cursor -->
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
 
-    <div class="noise-overlay"></div>
-    <!-- Awwwards spotlight background active via CSS body::before -->
+    <nav>
+        <div class="brand-logo">Two.AI</div>
+    </nav>
     
-    <header>
-        <div class="glass-header">
-            <h1 id="main-title"><i class="fa-solid fa-rocket"></i> 21 Powerful ChatGPT Prompts</h1>
+    <header class="hero-section">
+        <div class="hero-content">
+            <span class="hero-label">Ultimate AI Resource</span>
+            <h1 id="main-title">21 Powerful ChatGPT Prompts</h1>
             <p id="sub-title">Build a Powerful Personal Brand & Grow on Social Media</p>
         </div>
     </header>
 
-    <div class="tabs-container">
-        <button class="tab-btn active" data-tab="branding"><i class="fa-solid fa-bullhorn"></i> Branding</button>
-        <button class="tab-btn" data-tab="content"><i class="fa-solid fa-pen-nib"></i> Content Creation</button>
-        <button class="tab-btn" data-tab="productivity"><i class="fa-solid fa-bolt"></i> Productivity</button>
-        <button class="tab-btn" data-tab="interview"><i class="fa-solid fa-briefcase"></i> Job Interviews</button>
-        <button class="tab-btn" data-tab="roadmap"><i class="fa-solid fa-road"></i> AI Roadmap</button>
-        <button class="tab-btn" data-tab="google"><i class="fa-brands fa-google"></i> Google AI</button>
-        <button class="tab-btn" data-tab="shortcuts"><i class="fa-solid fa-keyboard"></i> Shortcuts</button>
-        <button class="tab-btn" data-tab="ai_skills"><i class="fa-solid fa-brain"></i> 12 AI Skills</button>
-        <button class="tab-btn" data-tab="claude"><i class="fa-solid fa-wand-magic-sparkles"></i> 99 Claude Commands</button>
-        <button class="tab-btn" data-tab="learning"><i class="fa-solid fa-graduation-cap"></i> Learning</button>
-        <button class="tab-btn" data-tab="automation"><i class="fa-solid fa-robot"></i> Automation</button>
-        <button class="tab-btn" data-tab="career"><i class="fa-solid fa-chart-line"></i> Career Growth</button>
-        <button class="tab-btn" data-tab="video_ai"><i class="fa-solid fa-video"></i> Video AI</button>
+    <div class="main-container">
+        <div class="tabs-container">
+            <button class="tab-btn active" data-tab="branding">Branding</button>
+            <button class="tab-btn" data-tab="content">Content</button>
+            <button class="tab-btn" data-tab="productivity">Productivity</button>
+            <button class="tab-btn" data-tab="interview">Interviews</button>
+            <button class="tab-btn" data-tab="roadmap">AI Roadmap</button>
+            <button class="tab-btn" data-tab="google">Google AI</button>
+            <button class="tab-btn" data-tab="shortcuts">Shortcuts</button>
+            <button class="tab-btn" data-tab="ai_skills">12 AI Skills</button>
+            <button class="tab-btn" data-tab="claude">Claude</button>
+            <button class="tab-btn" data-tab="learning">Learning</button>
+            <button class="tab-btn" data-tab="automation">Automation</button>
+            <button class="tab-btn" data-tab="career">Career</button>
+            <button class="tab-btn" data-tab="video_ai">Video AI</button>
+        </div>
+
+        <main>
+            <div class="prompts-grid" id="prompts-container">
+                <!-- Cards injected here via JS -->
+            </div>
+        </main>
     </div>
 
-    <main>
-        <div class="prompts-grid" id="prompts-container">
-            <!-- Cards will be injected here via JavaScript -->
-        </div>
-    </main>
-
-    <footer>
-        <p><i class="fa-solid fa-heart" style="color: #ef4444;"></i> Double Tap For More</p>
+    <footer class="site-footer">
+        <h2 class="footer-heading">Transform Your Workflow</h2>
+        <div class="footer-copy">© 2026 AI Talkbot. All rights reserved.</div>
     </footer>
 
     <script>
@@ -429,50 +427,35 @@
                 console.error('Failed to load prompts:', err);
                 return;
             }
+            
             const container = document.getElementById('prompts-container');
             const tabBtns = document.querySelectorAll('.tab-btn');
             const mainTitle = document.getElementById('main-title');
             const subTitle = document.getElementById('sub-title');
-            
-            // Intersection Observer for animation on scroll
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, { threshold: 0.1 });
 
             function renderCards(category) {
-                // Clear current cards
                 container.innerHTML = '';
                 
-                // Generate new cards
                 promptsData[category].forEach((prompt, index) => {
                     const card = document.createElement('div');
                     card.className = 'prompt-card';
-                    // Reset animation delay for re-renders to look snappy
-                    card.style.animationDelay = `${(index % 10) * 0.05}s`; 
                     
-                    // Conditionally change button text
                     let buttonText = 'Copy Prompt';
-                    if (category === 'roadmap' || category === 'google' || category === 'ai_skills') {
+                    if (['roadmap', 'google', 'ai_skills'].includes(category)) {
                         buttonText = 'Copy Details';
                     } else if (category === 'shortcuts') {
                         buttonText = 'Copy Shortcut';
                     } else if (category === 'claude') {
                         buttonText = 'Copy Command';
-                    } else if (category === 'video_ai') {
-                        buttonText = 'Copy Video Prompt';
                     }
                     
                     card.innerHTML = `
                         <div class="card-header">
                             <div class="prompt-number">${prompt.icon}</div>
-                            <h3 class="prompt-title">${(category === 'roadmap' || category === 'google' || category === 'productivity' || category === 'shortcuts' || category === 'ai_skills' || category === 'claude' || category === 'learning' || category === 'automation' || category === 'video_ai') ? '' : (index + 1) + '. '}${prompt.title}</h3>
+                            <h3 class="prompt-title">${['roadmap', 'google', 'productivity', 'shortcuts', 'ai_skills', 'claude', 'learning', 'automation', 'video_ai'].includes(category) ? '' : (index + 1) + '. '}${prompt.title}</h3>
                         </div>
                         <div class="prompt-text">
-                            ${prompt.category ? `<span style="font-size: 0.75rem; background: var(--accent); color: white; padding: 3px 8px; border-radius: 12px; margin-bottom: 8px; display: inline-block;">${prompt.category}</span><br>` : ''}
+                            ${prompt.category ? `<span class="prompt-category">${prompt.category}</span><br>` : ''}
                             ${prompt.text}
                         </div>
                         <button class="copy-btn" onclick="copyPrompt(this, \`${(category === 'claude' ? prompt.title.replace(/^\\d+\\.\\s*/, '') : prompt.text).replace(/`/g, '\\`').replace(/'/g, "\\'")}\`)">
@@ -481,62 +464,38 @@
                     `;
                     
                     container.appendChild(card);
-                    observer.observe(card);
                 });
             }
 
             // Tab functionality
             tabBtns.forEach(btn => {
                 btn.addEventListener('click', () => {
-                    // Update active state
                     tabBtns.forEach(b => b.classList.remove('active'));
                     btn.classList.add('active');
                     
                     const category = btn.dataset.tab;
                     
-                    // Update Titles
-                    if (category === 'branding') {
-                        mainTitle.innerHTML = '<i class="fa-solid fa-rocket"></i> 21 Powerful ChatGPT Prompts';
-                        subTitle.textContent = 'Build a Powerful Personal Brand & Grow on Social Media';
-                    } else if (category === 'content') {
-                        mainTitle.innerHTML = '<i class="fa-solid fa-pen-nib"></i> 25 Content Creation Prompts';
-                        subTitle.textContent = 'Master Social Media, SEO, & Copywriting Strategy';
-                    } else if (category === 'productivity') {
-                        mainTitle.innerHTML = '<i class="fa-solid fa-bolt"></i> 10 Productivity Prompts';
-                        subTitle.textContent = '10X Your Productivity & Skills with ChatGPT';
-                    } else if (category === 'interview') {
-                        mainTitle.innerHTML = '<i class="fa-solid fa-briefcase"></i> 21 Powerful ChatGPT Prompts';
-                        subTitle.textContent = 'Ace Any Job Interview & Land Your Dream Job';
-                    } else if (category === 'roadmap') {
-                        mainTitle.innerHTML = '<i class="fa-solid fa-road"></i> Complete AI Roadmap';
-                        subTitle.textContent = 'Master AI Fundamentals & Build Real-World Applications';
-                    } else if (category === 'google') {
-                        mainTitle.innerHTML = '<i class="fa-brands fa-google"></i> Google AI Ecosystem';
-                        subTitle.textContent = 'From Research to Production: Tools, Models & Agents';
-                    } else if (category === 'shortcuts') {
-                        mainTitle.innerHTML = '<i class="fa-solid fa-keyboard"></i> 25 ChatGPT Shortcuts';
-                        subTitle.textContent = 'Boost Your Efficiency with Keyboard Shortcuts';
-                    } else if (category === 'ai_skills') {
-                        mainTitle.innerHTML = '<i class="fa-solid fa-brain"></i> 12 AI Skills to Master in 2026';
-                        subTitle.textContent = 'Upgrade your skills. Stay ahead. Lead the future.';
-                    } else if (category === 'claude') {
-                        mainTitle.innerHTML = '<i class="fa-solid fa-wand-magic-sparkles"></i> 99 Secret Claude Commands';
-                        subTitle.textContent = 'Master AI interactions with these powerful slash commands (across 9 categories!)';
-                    } else if (category === 'learning') {
-                        mainTitle.innerHTML = '<i class="fa-solid fa-graduation-cap"></i> Learn By Doing';
-                        subTitle.textContent = 'Master new skills with hands-on, interactive AI mentorship';
-                    } else if (category === 'automation') {
-                        mainTitle.innerHTML = '<i class="fa-solid fa-robot"></i> 11 ChatGPT Automation Prompts';
-                        subTitle.textContent = 'Automate Your Daily Tasks and Skyrocket Productivity';
-                    } else if (category === 'career') {
-                        mainTitle.innerHTML = '<i class="fa-solid fa-chart-line"></i> 21 Career Growth Prompts';
-                        subTitle.textContent = 'Improve Career, Income & Professional Growth';
-                    } else if (category === 'video_ai') {
-                        mainTitle.innerHTML = '<i class="fa-solid fa-video"></i> Video AI Prompts';
-                        subTitle.textContent = 'Master cinematic video creation with advanced AI prompts';
+                    const titles = {
+                        'branding': ['21 Powerful ChatGPT Prompts', 'Build a Powerful Personal Brand & Grow on Social Media'],
+                        'content': ['25 Content Creation Prompts', 'Master Social Media, SEO, & Copywriting Strategy'],
+                        'productivity': ['10 Productivity Prompts', '10X Your Productivity & Skills with ChatGPT'],
+                        'interview': ['21 Interview Prompts', 'Ace Any Job Interview & Land Your Dream Job'],
+                        'roadmap': ['Complete AI Roadmap', 'Master AI Fundamentals & Build Real-World Applications'],
+                        'google': ['Google AI Ecosystem', 'From Research to Production: Tools, Models & Agents'],
+                        'shortcuts': ['25 ChatGPT Shortcuts', 'Boost Your Efficiency with Keyboard Shortcuts'],
+                        'ai_skills': ['12 AI Skills to Master', 'Upgrade your skills. Stay ahead. Lead the future.'],
+                        'claude': ['99 Secret Claude Commands', 'Master AI interactions with these powerful slash commands'],
+                        'learning': ['Learn By Doing', 'Master new skills with hands-on, interactive AI mentorship'],
+                        'automation': ['11 Automation Prompts', 'Automate Your Daily Tasks and Skyrocket Productivity'],
+                        'career': ['21 Career Growth Prompts', 'Improve Career, Income & Professional Growth'],
+                        'video_ai': ['Video & Image AI Prompts', 'Master cinematic creation with advanced AI prompts']
+                    };
+                    
+                    if(titles[category]) {
+                        mainTitle.textContent = titles[category][0];
+                        subTitle.textContent = titles[category][1];
                     }
                     
-                    // Render Cards
                     renderCards(category);
                 });
             });
@@ -547,35 +506,27 @@
             // Setup toast
             const toast = document.createElement('div');
             toast.className = 'toast';
-            toast.innerHTML = '<i class="fa-solid fa-check-circle"></i> Content copied to clipboard!';
+            toast.innerHTML = '<i class="fa-solid fa-check"></i> Copied to clipboard';
             document.body.appendChild(toast);
         });
 
-        // Fallback for document.execCommand in case Clipboard API is blocked (e.g. file:// without secure context)
         function fallbackCopyTextToClipboard(text, btn) {
             var textArea = document.createElement("textarea");
             textArea.value = text;
-            
-            // Avoid scrolling to bottom
             textArea.style.top = "0";
             textArea.style.left = "0";
             textArea.style.position = "fixed";
-
             document.body.appendChild(textArea);
             textArea.focus();
             textArea.select();
 
             try {
-                var successful = document.execCommand('copy');
-                if (successful) {
+                if (document.execCommand('copy')) {
                     showSuccess(btn);
-                } else {
-                    console.error('Fallback: Copying text command was unsuccessful');
                 }
             } catch (err) {
-                console.error('Fallback: Oops, unable to copy', err);
+                console.error('Fallback oops', err);
             }
-
             document.body.removeChild(textArea);
         }
 
@@ -586,19 +537,17 @@
             }
             navigator.clipboard.writeText(text).then(() => {
                 showSuccess(btn);
-            }).catch(err => {
-                console.error('Failed to copy text: ', err);
-                fallbackCopyTextToClipboard(text, btn); // try fallback if it fails
+            }).catch(() => {
+                fallbackCopyTextToClipboard(text, btn);
             });
         };
 
         function showSuccess(btn) {
             const originalHtml = btn.innerHTML;
-            btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
-            btn.style.background = '#10b981';
-            btn.style.color = 'white';
+            btn.innerHTML = '<i class="fa-solid fa-check"></i> COPIED';
+            btn.style.background = 'var(--text-dark)';
+            btn.style.color = 'var(--text-light)';
             
-            // Show toast
             const toast = document.querySelector('.toast');
             toast.classList.add('show');
             
@@ -610,53 +559,18 @@
             }, 2000);
         }
 
-        // Register Service Worker for PWA
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('sw.js')
-                    .then(registration => {
-                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
-                    })
-                    .catch(error => {
-                        console.log('ServiceWorker registration failed: ', error);
-                    });
-            });
-        }
-
-        // Awwwards Interaction Logic (Cursor, 3D Tilt, Magnetic)
+        // Custom Cursor Logic
         if (window.matchMedia("(pointer: fine)").matches) {
             const cursorDot = document.querySelector('.cursor-dot');
             const cursorOutline = document.querySelector('.cursor-outline');
             
-            // Cursor tracking & Spotlight
             window.addEventListener('mousemove', (e) => {
                 const posX = e.clientX;
                 const posY = e.clientY;
-                
                 cursorDot.style.transform = `translate(${posX}px, ${posY}px) translate(-50%, -50%)`;
                 cursorOutline.style.transform = `translate(${posX}px, ${posY}px) translate(-50%, -50%)`;
-                
-                // Spotlight background tracking
-                document.body.style.setProperty('--mouse-x', `${posX}px`);
-                document.body.style.setProperty('--mouse-y', `${posY}px`);
-
-                // Handle 3D Tilt on prompt cards
-                const target = e.target.closest('.prompt-card');
-                if (target) {
-                    const rect = target.getBoundingClientRect();
-                    const x = e.clientX - rect.left; // x position within the element
-                    const y = e.clientY - rect.top;  // y position within the element
-                    const centerX = rect.width / 2;
-                    const centerY = rect.height / 2;
-                    
-                    const rotateX = ((y - centerY) / centerY) * -8; // Max 8 deg tilt
-                    const rotateY = ((x - centerX) / centerX) * 8;
-                    
-                    target.style.transform = `perspective(1000px) translateY(-10px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
-                }
             });
 
-            // Hover state logic
             document.addEventListener('mouseover', (e) => {
                 if (e.target.closest('button, a, .tab-btn, .prompt-card')) {
                     cursorOutline.classList.add('hover');
@@ -666,12 +580,6 @@
             document.addEventListener('mouseout', (e) => {
                 if (e.target.closest('button, a, .tab-btn, .prompt-card')) {
                     cursorOutline.classList.remove('hover');
-                }
-                
-                // Reset tilt smoothly
-                const target = e.target.closest('.prompt-card');
-                if (target) {
-                    target.style.transform = `perspective(1000px) translateY(0) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
                 }
             });
         }
