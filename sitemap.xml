@@ -113,4 +113,52 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Indeed Jobs UAE -->
+  <url>
+    <loc>https://ae.indeed.com/</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- LinkedIn Jobs -->
+  <url>
+    <loc>https://www.linkedin.com/jobs/</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Glassdoor Jobs -->
+  <url>
+    <loc>https://www.glassdoor.com/Job/</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Bayt UAE Jobs -->
+  <url>
+    <loc>https://www.bayt.com/en/uae/jobs/</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Naukrigulf Jobs -->
+  <url>
+    <loc>https://www.naukrigulf.com/</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- GulfTalent Jobs -->
+  <url>
+    <loc>https://www.gulftalent.com/</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
